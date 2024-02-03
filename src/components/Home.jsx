@@ -13,30 +13,59 @@ const Home = () => {
                 className='w-full flex justify-center items-center flex-col'
             >
                 <div
-                    className='flex flex-col justify-between items-center bg-white bg-opacity-30 text-black relative shadow-sm font-mono backdrop-filter backdrop-blur-[15px] w-[85%] mt-4 rounded-xl px-8 py-7 mt-8'
+                    className='flex flex-col justify-between items-center bg-white bg-opacity-30 text-black relative shadow-sm font-mono backdrop-filter backdrop-blur-[15px] w-[90%] md:w-[85%] mt-4 rounded-xl px-8 py-7 mt-8'
                     style={{
                         fontFamily: "space-grotesk, sans-serif",
                     }}
                 >
                     <div
-                        className='text-5xl font-[700]'
+                        className=' text-2xl md:text-5xl font-[700]'
                     >
-                        Explore
-                        <span
-                            className='mx-2 text-[#FE7C2B]'
-                        >
-                            Limitless
-                        </span>
-                        Creative
-                        <span
-                            className='mx-2 text-[#FE7C2B]'
-                        >
-                            Possibilities
+                        {
+                            window.innerWidth > 500 ?
+                                <div>
+                                    Explore
+                                    <span
+                                        className='mx-2 text-[#FE7C2B]'
+                                    >
+                                        Limitless
+                                    </span>
+                                    Creative
+                                    <span
+                                        className='mx-2 text-[#FE7C2B]'
+                                    >
+                                        Possibilities
 
-                        </span>
+                                    </span>
+                                </div>
+                                :
+                                <div
+                                    className='text-center'
+                                >
+                                    <div>
+                                        Explore
+                                        <span
+                                            className='mx-2 text-[#FE7C2B]'
+                                        >
+                                            Limitless
+                                        </span>
+                                    </div>
+                                    <div>
+                                        Creative
+                                        <span
+                                            className='mx-2 text-[#FE7C2B]'
+                                        >
+                                            Possibilities
+
+                                        </span>
+                                    </div>
+                                </div>
+
+                        }
+
                     </div>
                     <div
-                        className='mt-6 text-[20px]'
+                        className='mt-3 md:mt-6 text-[20px] text-center'
                     >Uniting tech and culture for limitless creativity and community enrichment at the University School. Explore, express, engage.</div>
                 </div>
                 <div
