@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 import backgroundImage from "./assets/backgroundGbu.png";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
@@ -44,3 +45,5 @@ const App = () => {
 };
 
 export default App;
+
+
