@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import backgroundImage from "./assets/backgroundGbu.png";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Navbar from './components/Navbar';
+import About from './components/About';
+import Sponser from './components/Sponser';
+import Events from './components/Events';
 
-function App() {
+const App = () => {
+
+  const [currentPage, setCurrentPage] = useState('HOME');
+
+  const categories = [{
+    name: 'HOME',
+    path: ''
+  }, {
+    name: 'ABOUT',
+    path: 'about'
+  }, {
+    name: 'SPONSER US',
+    path: 'sponser'
+  }, {
+    name: 'EVENTS',
+    path: 'events'
+  }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: "cover", backgroundPosition: "center 50%", height: '100vh', width: '100vw' }}
+    >
+      <Router>
+        <Navbar categories={categories} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/sponser" element={<Sponser />} />
+          <Route path="/events" element={<Events />} />
+        </Routes>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
